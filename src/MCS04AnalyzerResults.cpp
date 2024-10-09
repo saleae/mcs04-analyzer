@@ -30,10 +30,15 @@ void MCS04AnalyzerResults::GenerateBubbleText( U64 frame_index, Channel& channel
     if( channel == mSettings->mBusClk2 )
     { // CLK2 shows bus phase, 1-based (0 means unknown/invalid)
 
-        static const char* busPhaseNames[] = {
-            [MCS4busPhaseA1] = "A1", [MCS4busPhaseA2] = "A2", [MCS4busPhaseA3] = "A3", [MCS4busPhaseM1] = "M1",
-            [MCS4busPhaseM2] = "M2", [MCS4busPhaseX1] = "X1", [MCS4busPhaseX2] = "X2", [MCS4busPhaseX3] = "X3",
-        };
+        static const char* busPhaseNames[ 9 ] = { 0 };
+        busPhaseNames[ MCS4busPhaseA1 ] = "A1";
+        busPhaseNames[ MCS4busPhaseA2 ] = "A2";
+        busPhaseNames[ MCS4busPhaseA3 ] = "A3";
+        busPhaseNames[ MCS4busPhaseM1 ] = "M1";
+        busPhaseNames[ MCS4busPhaseM2 ] = "M2";
+        busPhaseNames[ MCS4busPhaseX1 ] = "X1";
+        busPhaseNames[ MCS4busPhaseX2 ] = "X2";
+        busPhaseNames[ MCS4busPhaseX3 ] = "X2";
         const char* nm = data.busPhase < sizeof( busPhaseNames ) / sizeof( *busPhaseNames ) ? busPhaseNames[ data.busPhase ] : NULL;
 
         AddResultString( nm ? nm : "<BUS PHASE INVALID>" );

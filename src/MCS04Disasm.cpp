@@ -122,10 +122,12 @@ void mcs04disasm( char* dLong, char* dMed, char* dShort, enum MCS4prevInstrState
             break;
 
         case 0x0e:
+        {
             static const char memOpsNames[][ 4 ] = { "WRM", "WMP", "WRR", "WPM", "WR0", "WR1", "WR2", "WR3",
                                                      "SBM", "RDM", "RDR", "ADM", "RD0", "RD1", "RD2", "RD3" };
             strcpy( dLong, memOpsNames[ instr & 15 ] );
-            break;
+        }
+        break;
 
         case 0x0f:
             static const char fOpsNames[][ 4 ] = { "CLB", "CLC", "IAC", "CMC", "CMA", "RAL", "RAR", "TCC",
