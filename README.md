@@ -2,6 +2,8 @@
 
 Saleae MCS-04 Analyzer
 
+This analyzer was developed by [Dmitry Grinberg](https://dmitry.gr/?) for debugging his [Intel 4004 Linux Machine](https://dmitry.gr/?r=05.Projects&proj=35.%20Linux4004).
+
 ## Getting Started
 
 The following documentation describes how to build this analyzer locally. For more detailed information about the Analyzer SDK, debugging, CI builds, and more, check out the readme in the Sample Analyzer repository.
@@ -119,4 +121,18 @@ The built analyzer DLLs will be located here:
 `build\Analyzers\Release`
 
 For debug and release builds, respectively.
+
+
+## Output Frame Format
+  
+### Frame Type: `"<disassembly>"`
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| `ROM adr` | str | ROM Address |
+| `ROM val` | bytes | ROM Value |
+| `BUS (x2)` | bytes | Bus X2 Phase Nibble |
+| `BUS (x3)` | bytes | Bus X3 Phase Nibble |
+
+This is the decoded manchester word
 
