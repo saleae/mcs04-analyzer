@@ -20,9 +20,8 @@ void MCS04AnalyzerResults::GenerateBubbleText( U64 frame_index, Channel& channel
 {
     ClearResultStrings();
     Frame frame = GetFrame( frame_index );
-    union MCS4data data = {
-        .mData1 = frame.mData1,
-    };
+    union MCS4data data;
+    data.mData1 = frame.mData1;
     char reg_str[ 4 ], number_str[ 64 ];
 
     ClearResultStrings();
