@@ -1,8 +1,6 @@
 #ifndef MCS04_ANALYZER_DISASM
 #define MCS04_ANALYZER_DISASM
 
-// i say again: fuck c++
-
 enum MCS4prevInstrState
 {
     MCS4prevInstrNormal,

@@ -277,7 +277,6 @@ resync:
                          Hexadecimal /* executive decision */ );
 
 
-            // i do not like how Logic app will show a LOTof leading zeroes here, so we avoid it by using a string...
             snprintf( romAddr, sizeof( romAddr ), "0x%03x", 0xfff & dt.romAddr );
             f2.AddString( "ROM adr", romAddr );
 
