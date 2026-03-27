@@ -124,7 +124,7 @@ For debug and release builds, respectively.
 
 
 ## Output Frame Format
-  
+
 ### Frame Type: `"<disassembly>"`
 
 | Property | Type | Description |
